@@ -1,9 +1,68 @@
-.player1,.player2{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  margin-top:25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.players{
   display:flex;
   flex-direction:row;
-  align-items:center
+  align-items:center;
+  justify-content:space-around;
+  margin-top:10px;
+  height: 140px;
+  width: 500px;
 }
-svg{
-  margin-left:5px;
-  padding-left:10px
+
+.player1{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background-color:firebrick;
+  width:250px;
+  border-top-left-radius:10px;
 }
+.player2{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background-color:skyblue;
+  width:250px;
+  border-top-right-radius:10px;
+}
+
+.game-img,.title{
+  display:flex;
+  justify-content:center;
+}
+
+.result{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding-top:5px;
+  background-color:#49496f;
+  height: 50px;
+  width: 500px;
+  border:2px solid #1d1c1b;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+}
+
+.result>p{
+  color:white;
+  font-weight:800;
+  font-size:25px;
+}
+
+
