@@ -21,9 +21,8 @@
         {% endif %}
     {% endmacro %}
     {% set valor = "@2023" %}
-    {% set rock = '
-  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 200.7 195.9" style="enable-background:new 0 0 200.7 195.9;" xml:space="preserve" width="50px" height="50px">
+    {% set rock = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200.7 195.9" style="enable-background:new 0 0 200.7 195.9;" xml:space="preserve" width="100px" height="100px">
 <style type="text/css">
 	.st0{fill:#302E2F;}
 	.st1{opacity:0.5;fill:#FCF795;}
@@ -67,7 +66,7 @@
 </g>
 </svg>' %}
   {% set paper = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 243.7 210.5" style="enable-background:new 0 0 243.7 210.5;" xml:space="preserve" width="50px" height="50px">
+	 viewBox="0 0 243.7 210.5" style="enable-background:new 0 0 243.7 210.5;" xml:space="preserve" width="100px" height="100px">
 <style type="text/css">
 	.st0{fill:#302E2F;}
 	.st1{opacity:0.5;fill:#FCF795;}
@@ -126,7 +125,7 @@
 </g>
 </svg>' %}
   {% set scissors = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 239.5 238.8" style="enable-background:new 0 0 239.5 238.8;" xml:space="preserve" width="50px" height="50px">
+	 viewBox="0 0 239.5 238.8" style="enable-background:new 0 0 239.5 238.8;" xml:space="preserve" width="100px" height="100px">
 <style type="text/css">
 	.st0{fill:#302E2F;}
 	.st1{opacity:0.5;fill:#FCF795;}
@@ -177,25 +176,29 @@
 		c8-2.6,16-5.3,24.1-7.9C99.7,108.7,100.9,108.2,103.6,109.8z"/>
 </g>
 </svg>' %}
-    <h2>Rock & Paper & Scissors Random Game</h2>
-    <div class="player1">
-      <i class="bi bi-person"></i> Player1: {{pl1}}
-        {{svg_img(pl1)}}
-    </div>
-    <div class="player2">
-      <i class="bi bi-person-fill"></i> Player2: {{pl2}}
-        {{svg_img(pl2)}}
-    </div>
-      {% if (pl1 == 'Rock' and pl2 == 'Scissors') or (pl1 == 'Paper' and pl2 == 'Rock') or (pl1 == 'Scissors' and pl2 == 'Paper') %}
-          <p>Player 1 wins the game: {{ pl1}}</p>
-      {% else %}
-        {% if pl1 == pl2 %}
-          <p>Tie Game: {{ pl1}}</p>
+    <div class="container">
+      <h2 class="title">Rock & Paper & Scissors Random Game</h2>
+      <div class="players">
+        <div class="player1">
+          <i class="bi bi-person"></i> Player1: {{pl1}}
+          <div class="game-img">{{svg_img(pl1)}}</div>
+        </div>
+        <div class="player2">
+          <i class="bi bi-person-fill"></i> Player2: {{pl2}}
+          <div class="game-img">{{svg_img(pl2)}}</div>
+        </div>
+      </div>
+      <div class="result">
+        {% if (pl1 == 'Rock' and pl2 == 'Scissors') or (pl1 == 'Paper' and pl2 == 'Rock') or (pl1 == 'Scissors' and pl2 == 'Paper') %}
+            <p style="color:firebrick">Player 1 wins the game: {{ pl1}}</p>
         {% else %}
-          <p>Player 2 wins the game: {{ pl2}}</p>
-        {% endif %}
-      {% endif %}  
+          {% if pl1 == pl2 %}
+            <p>Tie Game: {{ pl1}}</p>
+          {% else %}
+            <p style="color:skyblue">Player 2 wins the game: {{ pl2}}</p>
+          {% endif %}
+        {% endif %}  
+      </div>
+    </div>
 </body>
 </html>
-
-
